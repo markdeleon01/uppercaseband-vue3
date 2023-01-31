@@ -1,6 +1,6 @@
 # uppercaseband-vue3
 
-This template should help get you started developing with Vue 3 in Vite.
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/markdeleon01/uppercaseband-vue3/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/markdeleon01/uppercaseband-vue3/tree/master)
 
 ## Recommended IDE Setup
 
@@ -10,10 +10,29 @@ This template should help get you started developing with Vue 3 in Vite.
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+As a matter of interest and passion for JavaScript and music in general, I created a Vue3 web application for my band UPPERCASE.
+
+## Project setup
+
+1.  Install NodeJS on your local machine
+2.  Clone this project repository
+3.  Navigate to the project folder and install
 
 ```sh
 npm install
+```
+
+4.  Install JSON Server to simulate a backend REST service to deliver data in JSON format to the front-end application
+
+```
+npm install -g json-server
+```
+
+5.  JSON Server will use the _db.json_ file in the project folder to serve mock data as defined in the file
+6.  Run the mock API server
+
+```
+json-server --watch db.json
 ```
 
 ### Compile and Hot-Reload for Development
@@ -21,6 +40,8 @@ npm install
 ```sh
 npm run dev
 ```
+
+The front-end application runs on: http://localhost:5173/
 
 ### Compile and Minify for Production
 
@@ -55,3 +76,7 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+
+### Customize configuration
+
+See [Configuration Reference](https://cli.vuejs.org/config/).
