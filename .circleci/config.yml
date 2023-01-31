@@ -65,7 +65,6 @@ workflows:
           name: frontend-build-test-staging
       # install Cypress
       - cypress/install:
-          build: npm install && npm run build
           name: cypress-install-staging
           requires:
             - frontend-build-test-staging
