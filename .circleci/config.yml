@@ -74,7 +74,7 @@ workflows:
           requires:
             - cypress-install-staging
           executor: cypress/base-14
-          start: npm run start:test:e2e
+          start: npm install && npm run build && npm run start:test:e2e
           wait-on: 'http://localhost:4173'
           record: true
           store_artifacts: true
