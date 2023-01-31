@@ -63,8 +63,22 @@ workflows:
     jobs:
       # install Cypress
       - cypress/install:
+          build: npm run build
           name: cypress-install-staging
-      - frontend-build-test:
-          name: frontend-build-test-unit
+      # run Cypress end-to-end tests
+      - cypress/run:
+          name: cypress-run-staging
           requires:
             - cypress-install-staging
+          executor: cypress/base-14
+          start: npm run dev
+          wait-on: 'http://localhost:4173'
+          record: true
+          store_artifacts: true
+          parallel: true
+          parallelism: 4
+          group: 4 machines
+          filters:
+            branches:
+              only:
+                - staging
