@@ -116,3 +116,9 @@ workflows:
           name: frontend-build-test-e2e
           requires:
             - frontend-build-test-unit
+      # run Cypress end-to-end tests - staging
+      - cypress/run:
+          name: cypress-run-staging
+          requires:
+            - frontend-build-test-e2e
+          executor: cypress/base-12-14-0
