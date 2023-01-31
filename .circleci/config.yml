@@ -78,6 +78,6 @@ workflows:
           parallel: true
           parallelism: 4
           group: 4 machines
-      - frontend-build-test
+      - frontend-build-test:
           requires:
             - cypress-run-staging
