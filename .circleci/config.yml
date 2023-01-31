@@ -81,7 +81,3 @@ workflows:
           parallel: true
           parallelism: 4
           group: 4 machines
-          filters:
-            branches:
-              only:
-                - staging
