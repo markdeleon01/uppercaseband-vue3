@@ -55,28 +55,17 @@ jobs:
           name: Front-End Unit Tests
           command: |
             npm run test:unit
-
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    steps:
-      - checkout
+      # run front-end e2e tests
       - run:
-          name: 'Say hello'
-          command: 'echo Hello, World!'
+          name: Front-End Unit Tests
+          command: |
+            npm run test:e2e
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  frontend-build-test-workflow:
     jobs:
-      - say-hello
-      - frontend-build-test
-        # install Cypress - staging
       - cypress/install:
-          name: cypress-install-staging
-      - cypress/run
+          name: cypress-install
+      - frontend-build-test
