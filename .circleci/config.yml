@@ -61,10 +61,14 @@ jobs:
 workflows:
   frontend-build-test-workflow:
     jobs:
+      - frontend-build-test:
+          name: frontend-build-test-staging
       # install Cypress
       - cypress/install:
           build: npm install && npm run build
           name: cypress-install-staging
+          requires:
+            - frontend-build-test
       # run Cypress end-to-end tests
       - cypress/run:
           name: cypress-run-staging
