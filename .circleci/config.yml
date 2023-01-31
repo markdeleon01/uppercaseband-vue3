@@ -63,7 +63,7 @@ workflows:
     jobs:
       # install Cypress
       - cypress/install:
-          build: npm init vue@latest && install && npm run build
+          build: npm init vue@latest && npm install && npm run build
           name: cypress-install-staging
       # run Cypress end-to-end tests
       - cypress/run:
