@@ -97,7 +97,7 @@ jobs:
       - run:
           name: End-To-End Unit Tests
           command: |
-            npm run test:e2e
+            npm run start-e2e
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
