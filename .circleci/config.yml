@@ -65,5 +65,4 @@ jobs:
 workflows:
   frontend-build-test-workflow:
     jobs:
-      - frontend-build-test:
-          name: frontend-build-test-staging
+      - frontend-build-test
