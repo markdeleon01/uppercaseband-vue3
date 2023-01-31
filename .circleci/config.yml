@@ -55,7 +55,7 @@ jobs:
           name: Front-End Unit Tests
           command: |
             npm run test:unit
- frontend-build-test-e2e:
+  frontend-build-test-e2e:
     docker:
       # the base image can run most needed actions with orbs
       - image: 'cimg/base:stable'
