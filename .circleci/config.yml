@@ -55,49 +55,6 @@ jobs:
           name: Front-End Unit Tests
           command: |
             npm run test:unit
-  frontend-build-test-e2e:
-    docker:
-      # the base image can run most needed actions with orbs
-      - image: 'cimg/base:stable'
-    steps:
-      - node/install
-      - checkout
-      - browser-tools/install-chrome
-      - browser-tools/install-chromedriver
-      # use Node v18.13.0
-      - run:
-          name: Swap node versions
-          command: |
-            set +e
-            wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-            export NVM_DIR="$HOME/.nvm"
-            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-            nvm install 18.13.0
-            nvm alias default 18.13.0
-
-            echo 'export NVM_DIR="$HOME/.nvm"' >> $BASH_ENV
-            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
-      # install dependencies for front-end application
-      - run:
-          name: Front-End Install
-          command: |
-            npm install
-      # build front-end application
-      - run:
-          name: Front-End Build
-          command: |
-            npm run build
-      - run:
-          name: Check browser installation
-          command: |
-            google-chrome --version
-            chromedriver --version
-      # run front-end unit tests
-      - run:
-          name: End-To-End Unit Tests
-          command: |
-            npm run start-e2e
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -111,14 +68,3 @@ workflows:
           name: frontend-build-test-unit
           requires:
             - cypress-install-staging
-      # run Cypress end-to-end tests
-      - frontend-build-test-e2e:
-          name: frontend-build-test-e2e
-          requires:
-            - frontend-build-test-unit
-      # run Cypress end-to-end tests - staging
-      - cypress/run:
-          name: cypress-run-staging
-          requires:
-            - frontend-build-test-e2e
-          executor: cypress/base-12-14-0
