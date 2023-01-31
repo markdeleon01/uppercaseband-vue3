@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start-e2e": "npm install && npm run build && npm run preview",
+    "start-e2e": "npm install && npm run build && npm run test:e2e",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "test:unit": "vitest --run --passWithNoTests --environment jsdom --root src/",
