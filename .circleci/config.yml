@@ -54,11 +54,15 @@ jobs:
           name: Front-End Unit Tests
           command: |
             npm run test:unit
+      # run front-end e2e tests
+      - run:
+          name: Front-End e2e Tests
+          command: |
+            npm run start:test:e2e
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   frontend-build-test-workflow:
     jobs:
-      - frontend-build-test:
-          name: frontend-build-test-unit
+      - frontend-build-test
