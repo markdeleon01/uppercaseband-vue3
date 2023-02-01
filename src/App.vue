@@ -19,17 +19,4 @@ import NavBar from '@/components/NavBar.vue'
   color: #2c3e50;
   display: grid;
 }
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: royalblue;
-}
 </style>

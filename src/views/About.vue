@@ -3,6 +3,13 @@
     <h1>U P P E R C A S E</h1>
     <hr width="50%" align="center" />
     <h2>Band Members</h2>
+    <p
+      class="member-item"
+      v-for="member in membersStore.members"
+      :key="member.name"
+    >
+      <span>{{ member.name }} - {{ member.role }}</span>
+    </p>
     <hr width="50%" align="center" />
     <p class="band-pic">
       <img src="@/assets/uppercase2019-bandPic.png" />
@@ -45,8 +52,38 @@
 </template>
 
 <script>
+import { useMembersStore } from '@/stores/Members'
+import { mapStores } from 'pinia'
+
+function getMembers(next) {
+  // call module action
+  const store = useMembersStore()
+  store
+    .fetchMembers()
+    .then(() => {
+      next()
+    })
+    .catch((error) => {
+      if (error.response && error.response.status == 404) {
+        // redirect to 404 page with name of resource missing
+        next({ name: '404', params: { resource: 'page' } })
+      } else {
+        next({ name: 'NetworkIssue' })
+      }
+    })
+}
+
 export default {
-  name: 'about-view'
+  name: 'about-view',
+  beforeRouteEnter(routeTo, routeFrom, next) {
+    getMembers(next)
+  },
+  beforeRouteUpdate(routeTo, routeFrom, next) {
+    getMembers(next)
+  },
+  computed: {
+    ...mapStores(useMembersStore)
+  }
 }
 </script>
 

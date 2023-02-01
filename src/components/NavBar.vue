@@ -12,6 +12,19 @@ export default {
 </script>
 
 <style scoped>
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: royalblue;
+}
+
 @media (max-width: 359px) {
   #nav {
     display: grid;

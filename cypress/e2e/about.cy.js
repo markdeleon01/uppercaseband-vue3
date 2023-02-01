@@ -12,6 +12,7 @@ describe('Test the about page', () => {
     cy.title().should('eq', 'U P P E R C A S E')
     cy.contains('h1', 'U P P E R C A S E')
     cy.contains('h2', 'Band Members')
+    cy.get('.member-item').should('have.length', 4)
     cy.get('.band-pic').should('have.length', 1)
     cy.get('.biography').should('have.length', 1)
   })
