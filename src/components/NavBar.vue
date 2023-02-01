@@ -1,11 +1,14 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link>
+    <RouterLink to="/">Home</RouterLink> |
+    <RouterLink :to="{ name: 'about-view' }">About</RouterLink> |
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'nav-bar'
+}
 </script>
 
 <style scoped>
