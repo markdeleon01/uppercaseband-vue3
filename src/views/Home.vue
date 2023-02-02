@@ -4,7 +4,7 @@
     <hr width="50%" align="center" />
     <h2>Welcome to the Official Website!</h2>
     <p class="band-logo">
-      <img src="@/assets/UPPERCASE-logo.png" />
+      <img src="/UPPERCASE-logo.png" />
     </p>
     <p class="page-content">
       UPPERCASE is a Filipino-Canadian indie pop rock band from Toronto, Canada
