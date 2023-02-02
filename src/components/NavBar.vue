@@ -1,9 +1,17 @@
 <template>
   <div id="nav">
-    <RouterLink to="/">Home</RouterLink> |
-    <RouterLink :to="{ name: 'about-view' }">About</RouterLink> |
-    <RouterLink :to="{ name: 'discography-view' }">Discography</RouterLink> |
-    <RouterLink :to="{ name: 'events-view' }">Events</RouterLink>
+    <RouterLink data-testid="home" to="/">Home</RouterLink> |
+    <RouterLink data-testid="about" :to="{ name: 'about-view' }"
+      >About</RouterLink
+    >
+    |
+    <RouterLink data-testid="discography" :to="{ name: 'discography-view' }"
+      >Discography</RouterLink
+    >
+    |
+    <RouterLink data-testid="events" :to="{ name: 'events-view' }"
+      >Events</RouterLink
+    >
   </div>
 </template>
 
