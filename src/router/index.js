@@ -1,9 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import NotFound from '../views/NotFound.vue'
+import NetworkIssue from '../views/NetworkIssue.vue'
 import Home from '../views/Home.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/404',
+      name: '404',
+      component: NotFound,
+      props: true
+    },
+    {
+      path: '/network-issue',
+      name: 'NetworkIssue',
+      component: NetworkIssue
+    },
     {
       path: '/about',
       name: 'about-view',
@@ -37,6 +50,10 @@ const router = createRouter({
       path: '/',
       name: 'home-view',
       component: Home
+    },
+    {
+      path: '/:catchAll(.*)', // will catch all navigation that doesn't match any of the routes above this entry in the array
+      redirect: { name: '404', params: { resource: 'page' } }
     }
   ]
 })
