@@ -1,5 +1,5 @@
 import { setActivePinia, createPinia } from 'pinia'
-import { useMembersStore } from '../members'
+import { useMembersStore } from '@/stores/Members'
 import { beforeEach, describe, it, expect } from 'vitest'
 
 describe('Members Store', () => {
