@@ -53,13 +53,14 @@
 
 <script>
 import { useMembersStore } from '@/stores/Members'
-import { mapStores } from 'pinia'
+import { mapStores } from 'pinia' //get access to the whole store with mapStores()
 
 function getMembers(next) {
-  // call module action
-  const store = useMembersStore()
+  const store = useMembersStore() // Option Store:  Members
+
+  //Once the store is instantiated, you can access any property defined in state, getters, and actions directly on the store.
   store
-    .fetchMembers()
+    .fetchMembers() // call the store action
     .then(() => {
       next()
     })
@@ -82,7 +83,20 @@ export default {
     getMembers(next)
   },
   computed: {
+    // note we are not passing an array, just one store after the other
     ...mapStores(useMembersStore)
+    // use Pinia with map helpers: return the whole store instance to use it in the template;
+    // each store will be accessible as its id + 'Store'.
+
+    // By default, Pinia will add the "Store" suffix to the id of each store. You can customize this behavior by calling the setMapStoreSuffix().
+
+    // completely remove the suffix: this.user, this.cart
+    // setMapStoreSuffix('')
+
+    // this.user_store, this.cart_store
+    // setMapStoreSuffix('_store')
+
+    // Note that store is an object wrapped with reactive, meaning there is no need to write .value after getters but, like props in setup, we cannot destructure it.
   }
 }
 </script>
