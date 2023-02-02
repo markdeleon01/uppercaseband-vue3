@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import NotFound from '../views/NotFound.vue'
 import NetworkIssue from '../views/NetworkIssue.vue'
 import Home from '../views/Home.vue'
+import NProgress from 'nprogress'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,6 +57,17 @@ const router = createRouter({
       redirect: { name: '404', params: { resource: 'page' } }
     }
   ]
+})
+
+router.beforeEach((routeTo, routeFrom, next) => {
+  // global route guard: start the progress bar when routing begins
+  NProgress.start()
+  next()
+})
+
+router.afterEach(() => {
+  // global route guard: finish the progress bar when routing is about to end
+  NProgress.done()
 })
 
 export default router
