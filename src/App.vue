@@ -10,7 +10,7 @@ import NavBar from '@/components/NavBar.vue'
   </div>
 </template>
 
-<style scoped>
+<style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -18,5 +18,14 @@ import NavBar from '@/components/NavBar.vue'
   text-align: center;
   color: #2c3e50;
   display: grid;
+}
+
+a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+a.router-link-exact-active {
+  color: royalblue;
 }
 </style>
