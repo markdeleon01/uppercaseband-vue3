@@ -3,6 +3,7 @@
     <RouterLink to="/">Home</RouterLink> |
     <RouterLink :to="{ name: 'about-view' }">About</RouterLink> |
     <RouterLink :to="{ name: 'discography-view' }">Discography</RouterLink> |
+    <RouterLink :to="{ name: 'events-view' }">Events</RouterLink>
   </div>
 </template>
 

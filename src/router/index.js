@@ -25,6 +25,15 @@ const router = createRouter({
         )
     },
     {
+      path: '/events',
+      name: 'events-view',
+      // route level code-splitting
+      // this generates a separate chunk (events.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () =>
+        import(/* webpackChunkName: "events-view" */ '../views/Events.vue')
+    },
+    {
       path: '/',
       name: 'home-view',
       component: Home
