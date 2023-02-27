@@ -33,6 +33,7 @@ export default {
 
 #nav a.router-link-exact-active {
   color: royalblue;
+  text-decoration: none;
 }
 
 @media (max-width: 359px) {
