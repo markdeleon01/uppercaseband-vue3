@@ -12,7 +12,7 @@
     </p>
     <hr width="50%" align="center" />
     <p class="band-pic">
-      <img src="uppercase2019-bandPic.png" />
+      <img src="/uppercase2019-bandPic.png" />
     </p>
     <div class="biography">
       <p>
