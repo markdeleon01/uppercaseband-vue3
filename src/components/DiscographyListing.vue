@@ -1,6 +1,6 @@
 <template>
   <p>
-    <img class="release-thumbnail" :src="'/' + release.imageUrl" /><br />
+    <img class="release-thumbnail" :src="release.imageUrl" /><br />
     <span class="release-title">{{ release.title }}</span
     ><br />
     <span class="release-date">Released: {{ formattedDate }}</span
