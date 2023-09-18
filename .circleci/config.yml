@@ -65,7 +65,13 @@ jobs:
           name: Front-End e2e Tests
           command: |
             npm run test:e2e
-      - codecov/upload
+
+      - run:
+          name: Send to CodeCov
+          command: bash <(curl -s https://codecov.io/bash)
+
+      - codecov/upload:
+          file: "/home/circleci/repo/src/test-results/*.json"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
