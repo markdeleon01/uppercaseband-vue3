@@ -65,6 +65,7 @@ jobs:
           name: Front-End e2e Tests
           command: |
             npm run test:e2e
+      - codecov/upload
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
