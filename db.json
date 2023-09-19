@@ -1,5 +1,5 @@
 {
-  "members" : [
+  "members": [
     {
       "name": "Mark de Leon",
       "role": "vocals, guitars",
@@ -101,15 +101,24 @@
       "imageUrl": "ub_babalik_cover.jpg",
       "content": "<p>UPPERCASE's Christmas single '<i>Babalik</i>' gets featured on a special promotional video by TAG 91.1 radio station from Dubai, UAE dedicated to Overseas Filipino Workers (OFWs).</p>",
       "externalUrl": "https://fb.watch/2wBYilLHEB/"
-    },    
+    },
     {
       "id": "501",
       "title": "'Tanging Ikaw'",
       "location": "Toronto, Canada",
       "date": "Feb 9 2019",
       "imageUrl": "tanging-ikaw.png",
-      "content": "<p>UPPERCASE's latest single '<i>Tanging Ikaw</i>' enjoys heavy streaming on Spotify Philippines.</p>",
+      "content": "<p>UPPERCASE's hit single '<i>Tanging Ikaw</i>' enjoys heavy streaming on Spotify Philippines.</p>",
       "externalUrl": "https://www.youtube.com/watch?v=KWHDtXBoa2o"
+    },
+    {
+      "id": "601",
+      "title": "'Ligaw Na Tadhana'",
+      "location": "Toronto, Canada",
+      "date": "Mar 23 2023",
+      "imageUrl": "ligaw-na-tadhana.png",
+      "content": "<p>UPPERCASE's latest single '<i>Ligaw Na Tadhana</i>' lyric video:</p>",
+      "externalUrl": "https://youtu.be/Z3nZp2xkFCg?si=t0nPvaDqJWknNHLu"
     }
   ]
 }
