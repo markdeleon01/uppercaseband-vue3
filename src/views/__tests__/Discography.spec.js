@@ -34,7 +34,7 @@ describe('Discography.vue', () => {
     store.fetchReleases().then(() => {
       expect(store.fetchReleases).toHaveBeenCalledTimes(1)
       expect(store.fetchReleases).toHaveBeenLastCalledWith()
-      expect(wrapper.findAll('.release-item')).to.have.lengthOf(5)
+      expect(wrapper.findAll('.release-item')).to.have.lengthOf(6)
     })
   })
 })
