@@ -12,6 +12,6 @@ describe('Test the discography page', () => {
     cy.title().should('eq', 'U P P E R C A S E')
     cy.contains('h1', 'U P P E R C A S E')
     cy.contains('h2', 'Discography')
-    cy.get('.release-item').should('have.length', 5)
+    cy.get('.release-item').should('have.length', 6)
   })
 })
