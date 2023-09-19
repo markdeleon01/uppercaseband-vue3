@@ -2,7 +2,9 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/markdeleon01/uppercaseband-vue3/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/markdeleon01/uppercaseband-vue3/tree/master)
 
-As a matter of interest and passion for JavaScript and music in general, I created a Vue3 web application for my band UPPERCASE.
+As a matter of interest and passion for JavaScript and music in general, I created a Vue3 web application for my band UPPERCASE.  
+
+The live site can be found on:  https://uppercaseband.onrender.com/
 
 ## Project setup
 
