@@ -4,7 +4,7 @@
 
 As a matter of interest and passion for JavaScript and music in general, I created a Vue3 web application for my band UPPERCASE.  
 
-The live site can be found on:  https://uppercaseband.onrender.com/
+The live site can be found on:  https://uppercaseband-vue3.onrender.com
 
 ## Project setup
 
